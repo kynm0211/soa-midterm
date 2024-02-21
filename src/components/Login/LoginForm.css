@@ -1,52 +1,86 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap'); */
+
 .login-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Background image */
-    background-image: url('../../../public/BG-login.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  .login-box h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .login-box form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .login-box label {
-    margin-bottom: 5px;
-  }
-  
-  .login-box input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .login-box button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-  }
-  
+  position: relative;
+  height: 100vh;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  /* Background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  url('../../../public/BG-login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.696);
+  padding: 2%;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  /* Add a box shadow for a 3D effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  font-size: 18px;
+  color: #343434;
+}
+
+.login-box h1 {
+  text-transform:uppercase;
+  text-align: center;
+  margin-top:0;
+  margin-bottom: 6%;
+  /* Change the font size and weight */
+  font-size: 50px;
+  font-weight: bold;
+  /* font-family: "Outfit", sans-serif; */
+  letter-spacing: 2px;
+
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box label {
+  margin-bottom: 5px;
+  /* Change the font size */
+  font-size: 1.2em;
+}
+
+.login-box input {
+  width: 68%;
+  margin-bottom: 6%;
+  padding: 2%;
+  border: none;
+  border-radius: 10px;
+  /* Change the font size */ 
+  font-size: 1.2em;
+}
+.btnLogin{
+  display: flex;
+  justify-content: center;
+}
+
+.btnLogin button {
+  width:50%;
+  padding: 3% 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  /* Change the font size and weight */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.btnLogin button:hover{
+  background-color: #0056b3;
+
+}
