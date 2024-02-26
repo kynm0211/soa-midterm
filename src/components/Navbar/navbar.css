@@ -1,0 +1,13 @@
+.navbar-container{
+    display:flex;
+    justify-content: space-evenly;
+    background-color: blanchedalmond;
+    padding: 0.5% 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-list{
+    display: flex;
+}

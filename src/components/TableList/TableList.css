@@ -1,0 +1,11 @@
+.Table{
+    border: 1px solid black;
+    padding: 2% 2%;
+    margin: 0 2%;
+}
+
+.TableList{
+    display: flex;
+    border: 1px solid gray;
+    width: 70%;
+}
