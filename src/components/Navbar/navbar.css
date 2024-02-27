@@ -1,13 +1,20 @@
 .navbar-container{
     display:flex;
-    justify-content: space-evenly;
-    background-color: blanchedalmond;
-    padding: 0.5% 0;
+    justify-content: space-between;
+    background-color: #343434;
+    padding: 1% 1.5%;
     font-size: 20px;
     font-weight: bold;
-    text-transform: uppercase;
+    color: white;
+    font-size: 25px;
 }
 
 .navbar-list{
     display: flex;
+    width: 70%;
+}
+
+.navbar-item{
+    margin: 0 3%;
+    border: none;
 }
