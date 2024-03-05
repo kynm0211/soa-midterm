@@ -1,0 +1,35 @@
+.tableOrder-container{
+    position: relative;
+    height: 100vh;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    /* Background image */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('../../../public/BG-tableOrder.jpg');
+    background-size: 1600px 900px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 100%;
+}
+
+.tableOrderNumber{
+    border: none;
+    background-color: #D5F7D0;
+    color: black;
+    border-radius: 20px;
+    padding: 5% 2%;
+    margin: 20px 0;
+
+}
+
+.menuOrder{
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
