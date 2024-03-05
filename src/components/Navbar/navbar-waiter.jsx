@@ -12,7 +12,7 @@ export default function navbar() {
                 <Link to="/history" className='navbar-item'>History</Link>
             </div>
             <div className='navbar-logout'>
-                <div>Log Out</div>
+                <Link to="/" className='logout-item'>Log Out</Link> 
             </div>
         </div>
     )

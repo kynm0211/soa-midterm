@@ -8,7 +8,11 @@
     color: white;
     font-size: 25px;
 }
-
+.logout-item{
+    color:white;
+    text-decoration: none;
+    border: none;
+}
 .navbar-list{
     display: flex;
     width: 70%;
