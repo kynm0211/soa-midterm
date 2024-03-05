@@ -13,8 +13,9 @@
     display: flex;
     width: 70%;
 }
-
 .navbar-item{
     margin: 0 3%;
+    color:white;
+    text-decoration: none;
     border: none;
 }
