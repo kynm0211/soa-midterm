@@ -1,6 +1,11 @@
 import React from 'react';
 import './LoginForm.css';
+import { useNavigate } from 'react-router-dom';
 export default function LoginForm() {
+    const navigate = useNavigate();
+    const navTableList = () => {
+        navigate('/table')
+    }
     return (
         <div className='login-box'>
             <h1>welcome</h1>
@@ -14,8 +19,8 @@ export default function LoginForm() {
                     <label>Password:&ensp;</label>
                     <input type="password" name="password" placeholder="Please enter password" />
                 </div>
-                <div className='btnLogin'>                
-                    <button>LOGIN</button>
+                <div className='btnLogin'>
+                    <button onClick={navTableList}>LOGIN</button>
                 </div>
 
             </form>
