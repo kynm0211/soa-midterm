@@ -82,4 +82,74 @@ span{
     width: 70px;
 }
 
+.overlayAdd {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popupAdd {
+    background: white;
+    padding: 0 2% 1% 2%;
+    border: none;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px 0 rgb(0, 0, 2);
+    /* border-radius: 4px; */
+    /* width: 20%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%; */
+  }
 
+  .popup-header{
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup-content{
+
+  }
+
+  .popup-content input{
+    width: 100%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid rgb(115, 115, 115);
+    font-size: 20px;
+  }
+
+  .popup-content select{
+    width: 104%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid rgb(115, 115, 115);
+    font-size: 20px;
+  }
+
+  .popup-content label,
+  input,
+  option {
+    padding: 5% 0;
+    font-size: 20px;
+  }
+
+  .popup-content #role{
+    padding: 2%;
+    border-radius: 10px;
+  }
+
+  .popup-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 0 0;
+
+  }

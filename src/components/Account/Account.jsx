@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Account.css";
+// import Popup from 'reactjs-popup';
 
 export default function Account() {
+    const [isOpenAdd, setIsOpenAdd] = useState(false);
+
+    const openPopupAdd = () => {
+        setIsOpenAdd(true);
+    };
+
+    const closePopupAdd = () => {
+        setIsOpenAdd(false);
+    };
+
+    const createConfirm = () => {
+        setIsOpenAdd(false);
+        alert("Create successfully.");
+    };
+
     return (
         <div>
             <div className="account-search">
@@ -9,8 +25,51 @@ export default function Account() {
             </div>
 
             <div className="account-add">
-                <button className="Add-btn">Add</button>
+                <button onClick={openPopupAdd} className="Add-btn">Add</button>
+                {isOpenAdd && (
+                    <div className="overlayAdd">
+                        <dialog className="popupAdd" open={isOpenAdd}>
+                            {/* <div onClick={closePopupAdd} style={{ position: 'absolute', right: 0 }}>X</div> */}
+                            <div>
+                                <h2 className="popup-header">Create a new account</h2>
+                                <div className="popup-content">
+                                    <label htmlFor="fullname">Fullname: </label>
+                                    <input type="text" id="fullname" className="fullname" /><br />
+                                    <label htmlFor="username">Username: </label>
+                                    <input type="text" id="username" className="username" /><br />
+                                    <label htmlFor="pwd">Password: </label>
+                                    <input type="text" id="pwd" className="pwd" /><br />
+                                    <label htmlFor="role">Role: </label>
+                                    <select name="role" id="role">
+                                        <option value="none">Choose a role</option>
+                                        <option value="chef">Chef</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="waiter">Waiter</option>
+                                    </select><br />
+                                    <label htmlFor="dob">Date of birth: </label>
+                                    <input type="date" id="dob" className="dob" /><br />
+                                    <label htmlFor="phone">Phone: </label>
+                                    <input type="text" id="phone" className="phone" /><br />
+                                    <label htmlFor="email">Email: </label>
+                                    <input type="email" id="email" className="email" /><br />
+                                </div>
+                            </div>
+                            <div className="popup-btn">
+                                <button onClick={closePopupAdd}>Cancel</button>
+                                <button onClick={createConfirm}>Create</button>
+                            </div>
+
+                        </dialog>
+                    </div>
+                )}
             </div>
+
+            {/* <div>
+                <Popup trigger={<button> Mở popup </button>} position="right center">
+                    <div>Nội dung popup</div>
+                </Popup>
+            </div> */}
+
 
             <div className="table">
                 <table className="account-table">
@@ -43,7 +102,7 @@ export default function Account() {
                                 </span>
 
                                 <span className="delete-icon">
-                                <i class="bi bi-trash3-fill"></i>
+                                    <i class="bi bi-trash3-fill"></i>
                                 </span>
                             </td>
                         </tr>
