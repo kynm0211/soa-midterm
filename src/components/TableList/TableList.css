@@ -6,7 +6,7 @@
     background-color: #AAAAAA;
     font-weight: 500;
     font-size: 25px;
-    flex-basis: calc(33.3333% - 300px);
+    flex-basis: calc(33.3333% - 210px);
 }
 
 .TableList{
@@ -41,7 +41,7 @@
     font-weight: 700;
     font-size: 30px;
     color: black;
-    margin: 0 0 30% 0;
+    margin: 15px 0 30px 0;
     text-align: center;
 }
 
