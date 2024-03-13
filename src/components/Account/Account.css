@@ -82,7 +82,7 @@ span{
     width: 70px;
 }
 
-.overlayAdd {
+.overlayAdd{
     position: fixed;
     top: 0;
     left: 0;
@@ -113,6 +113,7 @@ span{
   .popup-header{
     display: flex;
     justify-content: center;
+    color: #1d3557;
   }
 
   .popup-content{
@@ -120,19 +121,19 @@ span{
   }
 
   .popup-content input{
+    width: 96%;
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px solid rgb(115, 115, 115);
+    font-size: 15px;
+  }
+
+  .popup-content select{
     width: 100%;
     padding: 2%;
     border-radius: 10px;
     border: 1px solid rgb(115, 115, 115);
-    font-size: 20px;
-  }
-
-  .popup-content select{
-    width: 104%;
-    padding: 2%;
-    border-radius: 10px;
-    border: 1px solid rgb(115, 115, 115);
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .popup-content label,
@@ -151,5 +152,20 @@ span{
     display: flex;
     justify-content: flex-end;
     margin: 10px 0 0 0;
+  }
 
+  button{
+    margin: 0 0 0 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  .cancel-btn{
+    background-color: #908f8f;
+  }
+
+  .create-btn{
+    background-color: #0077b6;
   }

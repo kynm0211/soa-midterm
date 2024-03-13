@@ -7,7 +7,7 @@ export default function navbarManager(){
             <div className='navbar-list'>
                 <div className='navbar-item'>Table List</div>
                 <div className='navbar-item'>Menu</div>
-                <div className='navbar-item'>Order</div>
+                <div className='navbar-item'>Invoice</div>
                 <div className='navbar-item'>History</div>
                 <div className='navbar-item'>Account</div>
             </div>

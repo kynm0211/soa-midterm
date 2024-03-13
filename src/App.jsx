@@ -6,6 +6,7 @@ import Footer from '../src/components/Footer/footer'
 import Table from './pages/TableList/index'
 import TableOrder from './pages/TableOrder/index';
 import Account from './pages/Account/index'; 
+import Invoice from './pages/Invoice/index'; 
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/table" element={<Table />} />
           <Route path="/tableOrder" element={<TableOrder />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/invoice" element={<Invoice />} />
         </Routes>
         <Footer />
       </div>

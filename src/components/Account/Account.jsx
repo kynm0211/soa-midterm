@@ -4,6 +4,7 @@ import "./Account.css";
 
 export default function Account() {
     const [isOpenAdd, setIsOpenAdd] = useState(false);
+    const [isOpenEdit, setIsOpenEdit] = useState(false);
 
     const openPopupAdd = () => {
         setIsOpenAdd(true);
@@ -15,7 +16,19 @@ export default function Account() {
 
     const createConfirm = () => {
         setIsOpenAdd(false);
-        alert("Create successfully.");
+        alert("Create a new account.");
+    };
+
+    const deleteConfirm = () => {
+        alert("Delete button.");
+    };
+
+    const openPopupEdit = () => {
+        setIsOpenEdit(true);
+    }
+
+    const closePopupEdit = () => {
+        setIsOpenEdit(false);
     };
 
     return (
@@ -41,7 +54,7 @@ export default function Account() {
                                     <input type="text" id="pwd" className="pwd" /><br />
                                     <label htmlFor="role">Role: </label>
                                     <select name="role" id="role">
-                                        <option value="none">Choose a role</option>
+                                        <option value="none">None</option>
                                         <option value="chef">Chef</option>
                                         <option value="manager">Manager</option>
                                         <option value="waiter">Waiter</option>
@@ -55,8 +68,8 @@ export default function Account() {
                                 </div>
                             </div>
                             <div className="popup-btn">
-                                <button onClick={closePopupAdd}>Cancel</button>
-                                <button onClick={createConfirm}>Create</button>
+                                <button onClick={closePopupAdd} className="cancel-btn">Cancel</button>
+                                <button onClick={createConfirm} className="create-btn">Create</button>
                             </div>
 
                         </dialog>
@@ -97,11 +110,11 @@ export default function Account() {
                             <td>abcdef</td>
                             <td>abcdef</td>
                             <td className="action">
-                                <span className="edit-iccon">
+                                <span onClick={openPopupEdit} className="edit-iccon">
                                     <i class="bi bi-pencil-square"></i>
                                 </span>
 
-                                <span className="delete-icon">
+                                <span onClick={deleteConfirm} className="delete-icon">
                                     <i class="bi bi-trash3-fill"></i>
                                 </span>
                             </td>
