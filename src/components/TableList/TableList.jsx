@@ -9,10 +9,10 @@ export default function TableList() {
                     All Table
                 </div>
                 <div className="TabItem">
-                    Empty Table
+                    Empty
                 </div>
                 <div className="TabItem">
-                    Full Table
+                    Full
                 </div>
             </div>
 

@@ -1,4 +1,5 @@
 .account-search{
+  position: relative;
     display: flex;
     justify-content: center;
 }
@@ -31,6 +32,7 @@
 
 .Add-btn:hover{
     background-color: #c90300;
+    cursor: pointer;
 }
 
 .table{
@@ -163,4 +165,6 @@ span{
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 15px ;
+    cursor: pointer;
   }
+  
