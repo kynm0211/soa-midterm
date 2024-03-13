@@ -59,12 +59,12 @@ export default function Account() {
                                         <option value="manager">Manager</option>
                                         <option value="waiter">Waiter</option>
                                     </select><br />
-                                    <label htmlFor="dob">Date of birth: </label>
-                                    <input type="date" id="dob" className="dob" /><br />
-                                    <label htmlFor="phone">Phone: </label>
+                                    {/* <label htmlFor="dob">Date of birth: </label> */}
+                                    {/* <input type="date" id="dob" className="dob" /><br /> */}
+                                    {/* <label htmlFor="phone">Phone: </label>
                                     <input type="text" id="phone" className="phone" /><br />
                                     <label htmlFor="email">Email: </label>
-                                    <input type="email" id="email" className="email" /><br />
+                                    <input type="email" id="email" className="email" /><br /> */}
                                 </div>
                             </div>
                             <div className="popup-btn">
@@ -93,9 +93,9 @@ export default function Account() {
                             <th>Username</th>
                             <th>Pwd</th>
                             <th>Role</th>
-                            <th>Birthday</th>
-                            <th>Phone</th>
-                            <th>Mail</th>
+                            {/* <th>Birthday</th> */}
+                            {/* <th>Phone</th>
+                            <th>Mail</th> */}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -106,9 +106,9 @@ export default function Account() {
                             <td>abcdef</td>
                             <td>abcdef</td>
                             <td>abcdef</td>
-                            <td>abcdef</td>
-                            <td>abcdef</td>
-                            <td>abcdef</td>
+                            {/* <td>abcdef</td> */}
+                            {/* <td>abcdef</td>
+                            <td>abcdef</td> */}
                             <td className="action">
                                 <span onClick={openPopupEdit} className="edit-iccon">
                                     <i class="bi bi-pencil-square"></i>
@@ -125,9 +125,9 @@ export default function Account() {
                             <td>...</td>
                             <td>...</td>
                             <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
+                            {/* <td>...</td> */}
+                            {/* <td>...</td>
+                            <td>...</td> */}
                             <td>...</td>
                         </tr>
                         <tr>
@@ -136,9 +136,9 @@ export default function Account() {
                             <td>...</td>
                             <td>...</td>
                             <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
+                            {/* <td>...</td> */}
+                            {/* <td>...</td>
+                            <td>...</td> */}
                             <td>...</td>
                         </tr>
                     </tbody>
