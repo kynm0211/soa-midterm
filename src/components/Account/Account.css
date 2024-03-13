@@ -5,12 +5,12 @@
 }
 
 .accountSearch-box{
-    border-radius: 15px;
+    border-radius: 35px;
     padding: 12px 15px;
     margin: 15px 0 5px 0;
     width: 500px;
     background-color: rgb(236, 233, 233);
-    /* font-size: 18px; */
+    border: 1px solid;
 }
 
 .account-add{
@@ -139,8 +139,7 @@ span{
   }
 
   .popup-content label,
-  input,
-  option {
+  input{
     padding: 5% 0;
     font-size: 20px;
   }
@@ -174,8 +173,7 @@ span{
 
   .popup-btn button{
     display: flex;
-    margin: 0 8px;
-    background-color: #3c78de;
+    margin: 0 5px;
     border: none;
     color: white;
     border-radius: 5px;

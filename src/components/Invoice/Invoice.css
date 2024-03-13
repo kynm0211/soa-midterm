@@ -1,0 +1,117 @@
+.invoice-search{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+.invoiceSearch-box{
+    border-radius: 35px;
+    padding: 12px 15px;
+    margin: 15px 0 5px 0;
+    width: 500px;
+    background-color: rgb(236, 233, 233);
+    border: 1px solid;
+}
+
+.table{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
+}
+
+.invoice-table{
+    width: 98%;
+    border-collapse: collapse;
+}
+
+th, td{
+    border-collapse: collapse;
+    border: 1.5px solid gray;
+    text-align: center;
+}
+
+th{
+    background-color: #f6bd60;
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+td{
+    font-size: 20px;
+}
+
+tr:hover{
+    background-color: rgb(243, 233, 233);
+}
+
+.number-order-col{
+    width: 90px;
+}
+
+.OrID{
+    width: 300px;
+}
+
+.total{
+    width: 200px;
+}
+
+.payment-time{
+    width: 250px;
+}
+
+.invoice-info{
+    display: flex;
+    margin: 15px 10px 10px 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.revenue{
+    width: 150px;
+    text-align: right;
+    border: 1px solid #1C63B7;
+    color: #1C63B7;
+}
+
+.total-invoice{
+    width: 100px;
+    text-align: right;
+    border: 1px solid #CF2424;
+    color: #CF2424;
+}
+
+label{
+    margin: 0 10px;
+    font-weight: 700;
+}
+
+.shift{
+    border-radius: 10px;
+    padding: 4%;
+    width: 150px;
+    text-align: left;
+}
+
+input{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.invoice-info-item{
+    margin: 0 20px;
+}
+
+.revenue-label{
+    color: #1C63B7;
+}
+
+.total-invoice-label{
+    color: #CF2424;
+}
+
+
+

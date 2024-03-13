@@ -4,7 +4,7 @@ import "./Account.css";
 
 export default function Account() {
     const [isOpenAdd, setIsOpenAdd] = useState(false);
-    const [isOpenEdit, setIsOpenEdit] = useState(false);
+    // const [isOpenEdit, setIsOpenEdit] = useState(false);
 
     const openPopupAdd = () => {
         setIsOpenAdd(true);
@@ -23,14 +23,14 @@ export default function Account() {
         alert("Delete button.");
     };
 
-    const openPopupEdit = () => {
-        setIsOpenEdit(true);
-    }
+    // const openPopupEdit = () => {
+    //     setIsOpenEdit(true);
+    // }
 
-    const closePopupEdit = () => {
-        setIsOpenEdit(false);
-    };
-
+    // const closePopupEdit = () => {
+    //     setIsOpenEdit(false);
+    // };
+    
     return (
         <div>
             <div className="account-search">
@@ -110,7 +110,7 @@ export default function Account() {
                             {/* <td>abcdef</td>
                             <td>abcdef</td> */}
                             <td className="action">
-                                <span onClick={openPopupEdit} className="edit-iccon">
+                                <span className="edit-iccon">
                                     <i class="bi bi-pencil-square"></i>
                                 </span>
 
