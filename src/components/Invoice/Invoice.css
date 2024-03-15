@@ -2,18 +2,18 @@
     position: relative;
     display: flex;
     justify-content: center;
-  }
+}
   
 .invoiceSearch-box{
     border-radius: 35px;
-    padding: 12px 15px;
+    padding: 10px 15px;
     margin: 15px 0 5px 0;
     width: 500px;
     background-color: rgb(236, 233, 233);
     border: 1px solid;
 }
 
-.table{
+.table-of-invoices{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,36 +25,40 @@
     border-collapse: collapse;
 }
 
-th, td{
+.invoice-table th, .invoice-table td{
     border-collapse: collapse;
     border: 1.5px solid gray;
     text-align: center;
 }
 
-th{
+.invoice-table th{
     background-color: #f6bd60;
     padding: 10px 0;
     font-size: 20px;
 }
 
-td{
+.invoice-table td{
     font-size: 20px;
 }
 
-tr:hover{
+.invoice-table tr:hover{
     background-color: rgb(243, 233, 233);
 }
 
 .number-order-col{
-    width: 90px;
+    width: 70px;
 }
 
 .OrID{
-    width: 300px;
+    width: 230px;
+}
+
+.username{
+    width: 180px;
 }
 
 .total{
-    width: 200px;
+    width: 180px;
 }
 
 .payment-time{
@@ -83,7 +87,7 @@ tr:hover{
     color: #CF2424;
 }
 
-label{
+.invoice-info-item label{
     margin: 0 10px;
     font-weight: 700;
 }
@@ -95,14 +99,14 @@ label{
     text-align: left;
 }
 
-input{
+.invoice-info-item input{
     padding: 5px 10px;
     border-radius: 10px;
     border: 1px solid;
 }
 
 .invoice-info-item{
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .revenue-label{
@@ -112,6 +116,14 @@ input{
 .total-invoice-label{
     color: #CF2424;
 }
+
+.invoice-date{
+    padding: 4px 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    /* margin: 0 10px; */
+}
+
 
 
 

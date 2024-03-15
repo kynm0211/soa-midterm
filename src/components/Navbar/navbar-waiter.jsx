@@ -9,7 +9,7 @@ export default function navbar() {
                 <Link to="/table" className='navbar-item'>Table List</Link>
                 <Link to="/menu" className='navbar-item'>Menu</Link>
                 <Link to="/order" className='navbar-item'>Order</Link>
-                <Link to="/history" className='navbar-item'>History</Link>
+                {/* <Link to="/history" className='navbar-item'>History</Link> */}
             </div>
             <div className='navbar-logout'>
                 <Link to="/" className='logout-item'>Log Out</Link> 

@@ -23,3 +23,7 @@
     text-decoration: none;
     border: none;
 }
+
+.navbar-item:hover{
+    background-color: #5c5a5a;
+}

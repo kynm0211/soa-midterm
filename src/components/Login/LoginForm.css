@@ -57,11 +57,11 @@
 .login-box input {
   width: 68%;
   margin-bottom: 6%;
-  padding: 2%;
+  padding: 3%;
   border: none;
   border-radius: 10px;
   /* Change the font size */ 
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .btnLogin{
   display: flex;
@@ -83,4 +83,8 @@
 .btnLogin button:hover{
   background-color: #0056b3;
 
+}
+
+.user, .pwd{
+  margin: 0 0 0 7px;
 }

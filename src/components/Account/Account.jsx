@@ -32,7 +32,7 @@ export default function Account() {
     // };
     
     return (
-        <div>
+        <div className="account-container">
             <div className="account-search">
                 <input className="accountSearch-box" type="text" placeholder="Search"></input>
             </div>
@@ -53,8 +53,8 @@ export default function Account() {
                                     <label htmlFor="pwd">Password: </label>
                                     <input type="text" id="pwd" className="pwd" /><br />
                                     <label htmlFor="role">Role: </label>
-                                    <select name="role" id="role">
-                                        <option value="none">None</option>
+                                    <select name="role" id="role" value="none">
+                                        <option value="none" ></option>
                                         <option value="chef">Chef</option>
                                         <option value="manager">Manager</option>
                                         <option value="waiter">Waiter</option>
@@ -84,7 +84,7 @@ export default function Account() {
             </div> */}
 
 
-            <div className="table">
+            <div className="acc-table">
                 <table className="account-table">
                     <thead>
                         <tr>

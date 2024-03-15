@@ -6,7 +6,7 @@
 
 .accountSearch-box{
     border-radius: 35px;
-    padding: 12px 15px;
+    padding: 10px 15px;
     margin: 15px 0 5px 0;
     width: 500px;
     background-color: rgb(236, 233, 233);
@@ -35,7 +35,7 @@
     cursor: pointer;
 }
 
-.table{
+.acc-table{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -47,27 +47,27 @@
     border-collapse: collapse;
 }
 
-th, td{
+.account-table th, .account-table td{
     border-collapse: collapse;
     border-top: 1px solid gray;
     text-align: center;
 }
 
-th{
+.account-table th{
     background-color: #f6bd60;
     padding: 10px 0;
     font-size: 20px;
 }
 
-td{
+.account-table td{
     font-size: 20px;
 }
 
-tr:hover{
+.account-table tr:hover{
     background-color: rgb(243, 233, 233);
 }
 
-span{
+.account-table span{
     margin: 0 5px;
     cursor: pointer;
 }
@@ -80,7 +80,7 @@ span{
     font-size: 30px;
 }
 
-.number-order-col{
+.account-table.number-order-col{
     width: 70px;
 }
 
@@ -118,10 +118,6 @@ span{
     color: #1d3557;
   }
 
-  .popup-content{
-
-  }
-
   .popup-content input{
     width: 96%;
     padding: 2%;
@@ -155,13 +151,13 @@ span{
     margin: 10px 0 0 0;
   }
 
-  button{
+  /* .popup-btn button{
     margin: 0 0 0 10px;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
-  }
+  } */
 
   .cancel-btn{
     background-color: #908f8f;

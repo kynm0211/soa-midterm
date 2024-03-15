@@ -3,7 +3,7 @@ import './TableList.css'
 
 export default function TableList() {
     return (
-        <div>
+        <div className="tableList-container">
             <div className="ListTab">
                 <div className="TabItem">
                     All Table

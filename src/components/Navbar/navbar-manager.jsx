@@ -1,18 +1,18 @@
 import React from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 export default function navbarManager(){
     return (
         <div className='navbar-container'>
             <div className='navbar-list'>
-                <div className='navbar-item'>Table List</div>
-                <div className='navbar-item'>Menu</div>
-                <div className='navbar-item'>Invoice</div>
-                <div className='navbar-item'>History</div>
-                <div className='navbar-item'>Account</div>
+                <Link to="/table" className='navbar-item'>Table List</Link>
+                <Link to="/menu" className='navbar-item'>Menu</Link>
+                <Link to="/invoice" className='navbar-item'>Invoice</Link>
+                <Link to="/account" className='navbar-item'>Account</Link>
             </div>
             <div className='navbar-logout'>
-                <div>Log Out</div>
+                <Link to="/" className='logout-item'>Log Out</Link>
             </div>
         </div>
         )
