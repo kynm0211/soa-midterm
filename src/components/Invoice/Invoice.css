@@ -62,7 +62,7 @@
 }
 
 .payment-time{
-    width: 250px;
+    width: 230px;
 }
 
 .invoice-info{
@@ -123,6 +123,16 @@
     border-radius: 5px;
     /* margin: 0 10px; */
 }
+
+.invoice-date::-webkit-scrollbar {
+    width: 4px;
+}
+
+.invoice-date::-webkit-scrollbar-thumb{
+    background: #848383;
+    border-radius: 80px;
+}
+
 
 
 

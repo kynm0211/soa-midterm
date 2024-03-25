@@ -11,9 +11,11 @@ export default function Invoice(){
 
     return(
         <div className="invoice-container">
+            {/* search bar */}
             <div className="invoice-search">
                 <input className="invoiceSearch-box" type="text" placeholder="Search"></input>
             </div>
+            {/* invoice information to filter */}
             <div className="invoice-info">
                 <div className="invoice-info-item">
                     {/* <input type="date" name="day-of-invoice" id="day-of-invoice" disabled /> */}
@@ -38,7 +40,7 @@ export default function Invoice(){
                     <select name="shift" id="shift" defaultValue="all" className="shift">
                         <option value="all">All shift</option>
                         <option value="shift-1">Shift 1</option>
-                       <option value="shift-2">Shift 2</option>
+                        <option value="shift-2">Shift 2</option>
                         <option value="shift-3">Shift 3</option>
                     </select>
                 </div>
@@ -55,6 +57,7 @@ export default function Invoice(){
                 
             </div>
             
+            {/* table of invoices */}
             <div className="table-of-invoices">
                 <table className="invoice-table">
                     <thead>
@@ -62,10 +65,10 @@ export default function Invoice(){
                             <th className="number-order-col">No.</th>
                             <th>Table Name</th>
                             <th className="OrID">Order ID</th>
-                            <th>Quantity</th>
-                            <th className="total">Total</th>
                             <th>Shift</th>
                             <th className="username">Username</th>
+                            <th>Quantity</th>
+                            <th className="total">Total</th>
                             <th className="payment-time">Payment time</th>
                         </tr>
                     </thead>
@@ -104,7 +107,8 @@ export default function Invoice(){
                 </table>
             </div>
 
-            
+            {/* pagination bar */}
+
 
         </div>
     )
