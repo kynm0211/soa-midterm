@@ -40,8 +40,8 @@ export default function Account() {
             <div className="account-add">
                 <button onClick={openPopupAdd} className="Add-btn">Add</button>
                 {isOpenAdd && (
-                    <div className="overlayAdd">
-                        <dialog className="popupAdd" open={isOpenAdd}>
+                    <div className="overlayAdd-account">
+                        <dialog className="popupAdd-account" open={isOpenAdd}>
                             {/* <div onClick={closePopupAdd} style={{ position: 'absolute', right: 0 }}>X</div> */}
                             <div>
                                 <h2 className="popup-header">Create a new account</h2>

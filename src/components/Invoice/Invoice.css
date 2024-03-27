@@ -45,23 +45,23 @@
     background-color: rgb(243, 233, 233);
 }
 
-.number-order-col{
+.invoice-table.number-order-col{
     width: 70px;
 }
 
-.OrID{
+.invoice-table.OrID{
     width: 230px;
 }
 
-.username{
+.invoice-table.username{
     width: 180px;
 }
 
-.total{
+.invoice-table.total{
     width: 180px;
 }
 
-.payment-time{
+.invoice-table.payment-time{
     width: 230px;
 }
 
@@ -132,6 +132,28 @@
     background: #848383;
     border-radius: 80px;
 }
+
+.overlayOrderDetail{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popupOrderDetail {
+    background: white;
+    padding: 0 2% 1% 2%;
+    border: none;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px 0 rgb(0, 0, 2);
+    
+  }
 
 
 
