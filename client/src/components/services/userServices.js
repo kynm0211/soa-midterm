@@ -11,4 +11,8 @@ const fetchAllUser = (userId) => {
 const postCreateUser = (data) => {
     return axios.post("users/api/createUser", { data });
 };
-export { fetchAllUser, postCreateUser };
+
+const deleteUser = (userId) => {
+    return axios.delete("users/api/deleteUser", { data: { userId } });
+};
+export { fetchAllUser, postCreateUser, deleteUser };

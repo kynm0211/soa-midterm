@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from "react";
+import Table from "react-bootstrap/Table";
 import "./Account.css";
-import { fetchAllUser } from "../services/userServices";
+import { fetchAllUser, deleteUser } from "../services/userServices";
+import DeleteConfirmation from "../ModalConfirm/ModalConfirmDelete";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import ModalAddNew from "./ModalAddNewUser";
+import Container from "react-bootstrap/Container";
+import { toast, ToastContainer } from "react-toastify";
 
 // import Popup from 'reactjs-popup';
 
 export default function Account() {
     const [listUsers, setListUsers] = useState([]);
     const [isShowModalAddNew, setIsShowModalAddNew] = useState(false);
+    const [isShowModalEditUser, setIsShowModalEditUser] = useState(false);
+    const [isShowModalDelete, setIsShowModalDelete] = useState(false);
 
     const handleClose = () => {
         setIsShowModalAddNew(false);
         // setIsShowModalEditUser(false);
+        setIsShowModalDelete(false);
+    };
+
+    const closePopupAdd = () => {
+        setIsShowModalAddNew(false);
+    };
+
+    const showModalDelete = () => {
+        setIsShowModalDelete(true);
     };
     // const [isOpenEdit, setIsOpenEdit] = useState(false);
 
@@ -36,6 +53,10 @@ export default function Account() {
         getAllUsers();
     }, []);
 
+    const refeshPage = () => {
+        getAllUsers();
+    };
+
     const getAllUsers = async () => {
         let res = await fetchAllUser();
 
@@ -44,33 +65,53 @@ export default function Account() {
             console.log("fe received:", res.data);
         }
     };
+
+    const createConfirm = async () => {};
+
+    const delete_User = async (data) => {
+        setIsShowModalDelete(true);
+        // const userId = data._id;
+        // let res = await deleteUser(userId);
+
+        // if (res) {
+        //     refeshPage();
+        //     toast.info(`Delete ${data.fullName} successfully!`);
+        // } else {
+        //     toast.error("Error!");
+        // }
+    };
+
     //refesh data
-    const refreshUsers = async () => fetchAllUser();
+    // const refeshPage = async () => fetchAllUser();
     return (
-        <div className="account-container">
-            <div className="account-search">
-                <input
-                    className="accountSearch-box"
-                    type="text"
-                    placeholder="Search"
-                ></input>
-            </div>
+        <Container>
+            <div className="account-container">
+                <div className="account-search">
+                    <input
+                        className="accountSearch-box"
+                        type="text"
+                        placeholder="Search"
+                    ></input>
+                </div>
 
-            {/* <div>
-                <Popup trigger={<button> Mở popup </button>} position="right center">
-                    <div>Nội dung popup</div>
-                </Popup>
-            </div> */}
-
-            <div className="acc-table">
-                <table className="account-table">
+                <div className="my-3 d-flex justify-content-between">
+                    <b>List User:</b>
+                    <button
+                        className="btn btn-success"
+                        onClick={() => setIsShowModalAddNew(true)}
+                    >
+                        Add new user
+                    </button>
+                </div>
+                <Table striped bordered hover className="reponsive ">
                     <thead>
                         <tr>
-                            <th className="number-order-col">No.</th>
-                            <th>Fullname</th>
-                            <th>Username</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>User Name</th>
+                            <th>Full Name</th>
                             <th>Role</th>
-                            <th>Action</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,43 +121,62 @@ export default function Account() {
                                 return (
                                     <tr key={`users-${index}`}>
                                         <td>{index}</td>
-                                        <td>{item.fullName}</td>
+                                        <td>{item.email}</td>
                                         <td>{item.userName}</td>
-                                        <td>{item.role}</td>
-                                        <td className="action">
-                                            <span className="edit-iccon">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </span>
-
-                                            <span
-                                                onClick={deleteConfirm}
-                                                className="delete-icon"
+                                        <td>{item.fullName}</td>
+                                        <td>@{item.role}</td>
+                                        <td>
+                                            <button
+                                                onClick={() =>
+                                                    setIsShowModalEditUser(true)
+                                                }
+                                                className="btn btn-warning mx-3"
                                             >
-                                                <i class="bi bi-trash3-fill"></i>
-                                            </span>
+                                                Edit
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    delete_User(item)
+                                                }
+                                                className="btn btn-danger"
+                                            >
+                                                Delete
+                                            </button>
                                         </td>
                                     </tr>
                                 );
                             })}
-                        <tr>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            <td>...</td>
-                            {/* <td>...</td> */}
-                            {/* <td>...</td>
-                            <td>...</td> */}
-                            <td>...</td>
-                        </tr>
                     </tbody>
-                </table>
+                </Table>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
+
                 <ModalAddNew
                     show={isShowModalAddNew}
                     handleClose={handleClose}
-                    // handleUpdateTable={handleUpdateTable}
+                    handleUpdateTable={refeshPage}
                 />
+
+                <DeleteConfirmation
+                    showModal={isShowModalDelete}
+                    hideModal={handleClose}
+                    message={"Do you want to delete"}
+                />
+                {/* <ModalEditUser
+                show={isShowModalEditUser}
+                handleClose={handleClose}
+            /> */}
             </div>
-        </div>
+        </Container>
     );
 }

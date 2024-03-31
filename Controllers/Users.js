@@ -25,9 +25,25 @@ export const handleGetAllUser = async (req, res) => {
     }
 };
 
+const checkUserExist = async (userEmail) => {
+    try {
+        const user = await User.find({ email: userEmail });
+        if (user) {
+            return true;
+        }
+        return false;
+    } catch (err) {
+        return false;
+    }
+};
+
 export const createUser = async (req, res) => {
     try {
-        const { fullName, userName, email, password, role } = req.body;
+        // console.log(req.body);
+        const { fullName, userName, email, password, role } = req.body.data;
+
+        // if (checkUserExist(email))
+        //     return res.status(404).json({ message: "Email is exist!" });
 
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
@@ -42,6 +58,18 @@ export const createUser = async (req, res) => {
 
         const savedUser = await newUser.save();
         res.status(201).json(savedUser);
+    } catch (err) {
+        res.status(404).json({ message: err.message });
+    }
+};
+
+export const deleteUser = async (req, res) => {
+    try {
+        const userId = req.body.userId;
+        console.log(req.body.userId);
+        const deleteUser = await User.findByIdAndDelete(userId);
+        if (!deleteUser) return res.status(401).json("message: User not found");
+        return res.status(200).json(deleteUser);
     } catch (err) {
         res.status(404).json({ message: err.message });
     }
