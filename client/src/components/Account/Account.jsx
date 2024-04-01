@@ -167,6 +167,7 @@ export default function Account() {
                     show={isShowModalEditUser}
                     handleClose={handleClose}
                     data={modalData}
+                    handleUpdateTable={refeshPage}
                 />
                 {/* <ModalEditUser
                 show={isShowModalEditUser}

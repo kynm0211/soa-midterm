@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { postCreateUser } from "../services/userServices";
+import { editUser } from "../services/userServices";
 import { toast, ToastContainer } from "react-toastify";
 import Form from "react-bootstrap/Form";
 
@@ -11,15 +11,15 @@ function ModalEditUser(props) {
     const [userName, setuserName] = useState("");
     const [fullName, setfullName] = useState("");
     const [password, setPassword] = useState("");
-    const [role, setRole] = useState("");
-    const [re_password, setRe_password] = useState("");
+    const [role, setRole] = useState(data.role);
+    const [re_password, setRepassword] = useState("");
 
     useEffect(() => {
         setEmail(data.email);
         setuserName(data.userName);
         setfullName(data.fullName);
         setRole(data.role);
-    }, []);
+    }, [data]);
 
     const validateData = () => {
         //email
@@ -37,15 +37,15 @@ function ModalEditUser(props) {
         } else if (!fullName) {
             toast.error("Please enter full ame!");
             return false;
-        } else if (!password) {
-            toast.error("Please enter password!");
-            return false;
-        } else if (!re_password) {
-            toast.error("Please enter re-password!");
-            return false;
-        } else if (password !== re_password) {
-            toast.error("Password and re-password must be same!");
-            return false;
+            // } else if (!password) {
+            //     toast.error("Please enter password!");
+            //     return false;
+            // } else if (!re_password) {
+            //     toast.error("Please enter re-password!");
+            //     return false;
+            // } else if (password !== re_password) {
+            //     toast.error("Password and re-password must be same!");
+            //     return false;
         } else if (!role) {
             toast.error("Please choose role!");
             return false;
@@ -56,23 +56,23 @@ function ModalEditUser(props) {
     };
 
     const handleSaveUser = async () => {
-        // const data = { email, userName, fullName, password, role };
-        // if (validateData()) {
-        //     let res = await postCreateUser(data);
-        //     if (res && res.data) {
-        //         handleClose();
-        //         setEmail("");
-        //         setuserName("");
-        //         setfullName("");
-        //         setPassword("");
-        //         setRole("");
-        //         handleUpdateTable();
-        //         toast.success("Create user successfully!");
-        //         // handleUpdateTable();
-        //     } else {
-        //         toast.error("Create user failed :(");
-        //     }
-        // }
+        const _id = data._id;
+        const dataUser = { _id, email, userName, fullName, role };
+        if (validateData()) {
+            let res = await editUser(dataUser);
+            if (res && res.data) {
+                handleClose();
+                setEmail("");
+                setuserName("");
+                setfullName("");
+                setRole("");
+                handleUpdateTable();
+                toast.success("Update user successfully!");
+                // handleUpdateTable();
+            } else {
+                toast.error("Update user failed :(");
+            }
+        }
         console.log(data);
     };
 

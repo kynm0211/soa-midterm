@@ -15,4 +15,9 @@ const postCreateUser = (data) => {
 const deleteUser = (userId) => {
     return axios.delete("users/api/deleteUser", { data: { userId } });
 };
-export { fetchAllUser, postCreateUser, deleteUser };
+
+const editUser = (data) => {
+    console.log(data);
+    return axios.put("users/api/editUser", { data });
+};
+export { fetchAllUser, postCreateUser, deleteUser, editUser };
