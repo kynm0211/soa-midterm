@@ -74,3 +74,23 @@ export const deleteUser = async (req, res) => {
         res.status(404).json({ message: err.message });
     }
 };
+
+export const editUser = async (req, res) => {
+    try {
+        const { _id, fullName, userName, email, password, role } =
+            req.body.data;
+        let dataUpdate = { fullName, userName, email, password, role };
+        if (!_id) {
+            return res.status(401).json({ message: "User not found!" });
+        }
+        updateUser = await User.findByIdAndUpdate(_id, dataUpdate, {
+            new: true,
+        });
+        if (!updateUser) {
+            return res.status(401).json({ message: "Update fail !" });
+        }
+        res.status(200).json({ message: "Update user successfully !" });
+    } catch (err) {
+        req.status(404).json({ message: err.message });
+    }
+};

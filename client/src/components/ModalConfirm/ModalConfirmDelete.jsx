@@ -5,9 +5,9 @@ const DeleteConfirmation = ({
     showModal,
     hideModal,
     confirmModal,
+    fullName,
     id,
-    type,
-    message,
+    deleteUser,
 }) => {
     return (
         <Modal show={showModal} onHide={hideModal}>
@@ -15,13 +15,18 @@ const DeleteConfirmation = ({
                 <Modal.Title>Delete Confirmation</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <div className="alert alert-danger">{message}</div>
+                <div className="alert alert-danger">
+                    Do you want to delete user {fullName} ?
+                </div>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="default" onClick={hideModal}>
                     Cancel
                 </Button>
-                <Button variant="danger" onClick={() => confirmModal(type, id)}>
+                <Button
+                    variant="danger"
+                    onClick={() => deleteUser(id, fullName)}
+                >
                     Delete
                 </Button>
             </Modal.Footer>

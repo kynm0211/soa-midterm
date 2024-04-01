@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 import "./Account.css";
 import { fetchAllUser, deleteUser } from "../services/userServices";
 import DeleteConfirmation from "../ModalConfirm/ModalConfirmDelete";
+import ModalEditUser from "./ModalEditUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import ModalAddNew from "./ModalAddNewUser";
@@ -16,37 +17,13 @@ export default function Account() {
     const [isShowModalAddNew, setIsShowModalAddNew] = useState(false);
     const [isShowModalEditUser, setIsShowModalEditUser] = useState(false);
     const [isShowModalDelete, setIsShowModalDelete] = useState(false);
+    const [modalData, setIsModalData] = useState({});
 
     const handleClose = () => {
         setIsShowModalAddNew(false);
-        // setIsShowModalEditUser(false);
         setIsShowModalDelete(false);
-    };
-
-    const closePopupAdd = () => {
-        setIsShowModalAddNew(false);
-    };
-
-    const showModalDelete = () => {
-        setIsShowModalDelete(true);
-    };
-    // const [isOpenEdit, setIsOpenEdit] = useState(false);
-
-    // const openPopupAdd = () => {
-    //     setIsOpenAdd(true);
-    // };
-
-    // const closePopupAdd = () => {
-    //     setIsOpenAdd(false);
-    // };
-
-    // const createConfirm = () => {
-    //     setIsOpenAdd(false);
-    //     alert("Create a new account.");
-    // };
-
-    const deleteConfirm = () => {
-        alert("Delete button.");
+        setIsShowModalEditUser(false);
+        setIsModalData({});
     };
 
     useEffect(() => {
@@ -66,10 +43,9 @@ export default function Account() {
         }
     };
 
-    const createConfirm = async () => {};
-
-    const delete_User = async (data) => {
+    const delete_User = (data) => {
         setIsShowModalDelete(true);
+        setIsModalData(data);
         // const userId = data._id;
         // let res = await deleteUser(userId);
 
@@ -81,6 +57,21 @@ export default function Account() {
         // }
     };
 
+    const confirmDelete = async (userId) => {
+        let res = await deleteUser(userId);
+        if (res) {
+            refeshPage();
+            toast.info(`Delete successfully!`);
+        } else {
+            toast.error("Error!");
+        }
+        handleClose();
+    };
+
+    const editUser = async (data) => {
+        setIsShowModalEditUser(true);
+        setIsModalData(data);
+    };
     //refesh data
     // const refeshPage = async () => fetchAllUser();
     return (
@@ -127,9 +118,7 @@ export default function Account() {
                                         <td>@{item.role}</td>
                                         <td>
                                             <button
-                                                onClick={() =>
-                                                    setIsShowModalEditUser(true)
-                                                }
+                                                onClick={() => editUser(item)}
                                                 className="btn btn-warning mx-3"
                                             >
                                                 Edit
@@ -170,7 +159,14 @@ export default function Account() {
                 <DeleteConfirmation
                     showModal={isShowModalDelete}
                     hideModal={handleClose}
-                    message={"Do you want to delete"}
+                    fullName={modalData.fullName}
+                    deleteUser={confirmDelete}
+                    id={modalData._id}
+                />
+                <ModalEditUser
+                    show={isShowModalEditUser}
+                    handleClose={handleClose}
+                    data={modalData}
                 />
                 {/* <ModalEditUser
                 show={isShowModalEditUser}

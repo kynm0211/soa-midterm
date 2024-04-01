@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { postCreateUser } from "../services/userServices";
 import { toast, ToastContainer } from "react-toastify";
 import Form from "react-bootstrap/Form";
 
-function ModalAddNew(props) {
-    const { show, handleClose, handleUpdateTable } = props; //received from parent
+function ModalEditUser(props) {
+    const { show, handleClose, handleUpdateTable, data } = props; //received from parent
     const [email, setEmail] = useState("");
     const [userName, setuserName] = useState("");
     const [fullName, setfullName] = useState("");
     const [password, setPassword] = useState("");
     const [role, setRole] = useState("");
     const [re_password, setRe_password] = useState("");
+
+    useEffect(() => {
+        setEmail(data.email);
+        setuserName(data.userName);
+        setfullName(data.fullName);
+        setRole(data.role);
+    }, []);
 
     const validateData = () => {
         //email
@@ -36,7 +43,7 @@ function ModalAddNew(props) {
         } else if (!re_password) {
             toast.error("Please enter re-password!");
             return false;
-        } else if (password != re_password) {
+        } else if (password !== re_password) {
             toast.error("Password and re-password must be same!");
             return false;
         } else if (!role) {
@@ -49,30 +56,31 @@ function ModalAddNew(props) {
     };
 
     const handleSaveUser = async () => {
-        const data = { email, userName, fullName, password, role };
-        if (validateData()) {
-            let res = await postCreateUser(data);
-            if (res && res.data) {
-                handleClose();
-                setEmail("");
-                setuserName("");
-                setfullName("");
-                setPassword("");
-                setRole("");
-                handleUpdateTable();
-                toast.success("Create user successfully!");
-                // handleUpdateTable();
-            } else {
-                toast.error("Create user failed :(");
-            }
-        }
+        // const data = { email, userName, fullName, password, role };
+        // if (validateData()) {
+        //     let res = await postCreateUser(data);
+        //     if (res && res.data) {
+        //         handleClose();
+        //         setEmail("");
+        //         setuserName("");
+        //         setfullName("");
+        //         setPassword("");
+        //         setRole("");
+        //         handleUpdateTable();
+        //         toast.success("Create user successfully!");
+        //         // handleUpdateTable();
+        //     } else {
+        //         toast.error("Create user failed :(");
+        //     }
+        // }
+        console.log(data);
     };
 
     return (
         <div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add new user</Modal.Title>
+                    <Modal.Title>Edit User</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <div className="body-addNew">
@@ -117,7 +125,7 @@ function ModalAddNew(props) {
                                     }
                                 />
                             </div>
-                            <div className="form-group">
+                            {/* <div className="form-group">
                                 <label className="form-label">Password:</label>
                                 <input
                                     type="text"
@@ -142,7 +150,7 @@ function ModalAddNew(props) {
                                         setRe_password(event.target.value)
                                     }
                                 />
-                            </div>
+                            </div> */}
                             <div className="form-group">
                                 <label className="form-label">Role:</label>
                                 <Form.Select
@@ -166,7 +174,7 @@ function ModalAddNew(props) {
                         Close
                     </Button>
                     <Button variant="primary" onClick={() => handleSaveUser()}>
-                        Save User
+                        Save Changes
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -174,4 +182,4 @@ function ModalAddNew(props) {
     );
 }
 
-export default ModalAddNew;
+export default ModalEditUser;
