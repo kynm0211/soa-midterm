@@ -5,10 +5,12 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "nodemon index.js",
+        "start": "node index.js",
         "server": "nodemon index.js",
         "client": "npm run start --prefix client",
-        "dev": "concurrently \"npm start index.js\" \"npm run server\" \"npm run client\""
+        "iclient": "npm i --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "setup": "npm i && npm run iclient"
     },
     "keywords": [],
     "author": "",
