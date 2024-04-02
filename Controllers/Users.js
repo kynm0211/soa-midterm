@@ -93,3 +93,26 @@ export const editUser = async (req, res) => {
         res.status(404).json({ message: err.message });
     }
 };
+
+export const loginUser = async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const { token } = req.headers;
+        return res.json(
+            {statusCode: 0,
+            message: "Login success",
+            data: {
+                username,
+                password,
+                token
+            }
+        });
+        }
+    catch(e){
+        return res.json({
+            statusCode: 1,
+            message: "Login fail",
+            error: true
+        })
+    }
+}

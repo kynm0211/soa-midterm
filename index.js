@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 //routes
-app.use("/users", userRoutes);
+app.use("/api/users", userRoutes);
 app.get("/get", (req, res) => res.send("ok"));
 //connect to mongoose
 const PORT = process.env.PORT || 6001;
